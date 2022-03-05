@@ -1,23 +1,39 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 $title-font: 'Playfair Display', serif;
 $normal-font: 'Roboto', sans-serif;
 
 .total-container {
-  display: grid;
-  justify-content: center;
+  min-width: 100%;
+  width: 100%;
+  max-width: 100vw;
   header {
+    padding: 30px;
+
     min-width: 100%;
+
+    background: linear-gradient(
+      150deg,
+      rgb(16, 147, 187) 63%,
+      white calc(63% + 1px)
+    );
     .picture-container {
-      min-width: 80%;
+      display: grid;
+      align-items: end;
+      min-width: 100%;
+      min-height: 470px;
       background-image: url('./images/profile-small.jpg');
+      background-size: cover;
+      box-shadow: 5px 5px 11px 1px rgba(5, 38, 46, 0.35);
       h1 {
         font: 4rem $title-font;
         padding: 10px;
         color: white;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.542);
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.542);
+        letter-spacing: 2px;
       }
     }
   }
