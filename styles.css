@@ -7,28 +7,120 @@
 .total-container {
   min-width: 100%;
   width: 100%;
-  max-width: 100vw;
+  max-width: 1920px;
 }
 .total-container header {
   padding: 30px;
   min-width: 100%;
-  background: linear-gradient(150deg, #1093bb 63%, white calc(63% + 1px));
+  background: linear-gradient(150deg, #1093bb 37%, white calc(37% + 1px));
 }
 .total-container header .picture-container {
   display: grid;
   align-items: end;
   min-width: 100%;
-  min-height: 470px;
+  min-height: 525px;
   background-image: url("./images/profile-small.jpg");
   background-size: cover;
   box-shadow: 5px 5px 11px 1px rgba(5, 38, 46, 0.35);
 }
-.total-container header .picture-container h1 {
+.total-container header .picture-container span {
   font: 4rem "Playfair Display", serif;
-  padding: 10px;
+  padding: 10px 20px;
   color: white;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.542);
   letter-spacing: 2px;
+}
+.total-container header .about-me-container {
+  padding-top: 25px;
+}
+.total-container header .about-me-container h1 {
+  font: 2.8rem "Playfair Display", serif;
+  text-align: center;
+}
+.total-container header .about-me-container p {
+  font: 1.6rem "Roboto", sans-serif;
+  font-weight: 400;
+  color: rgba(38, 38, 38, 0.795);
+  line-height: 35px;
+}
+.total-container header .about-me-container .header-socials-container {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+}
+.total-container header .about-me-container .header-socials-container i {
+  color: black;
+  font-size: 35px;
+  padding: 0px 15px;
+}
+.total-container main {
+  padding-top: 100px;
+}
+.total-container main h2 {
+  font: 2.8rem "Playfair Display", serif;
+  text-align: center;
+}
+.total-container main .projects-container {
+  padding: 20px;
+  display: grid;
+  gap: 50px 30px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 420px));
+  justify-content: center;
+}
+.total-container main .projects-container div:nth-of-type(1) .project-screenshot {
+  background: #e12705;
+}
+.total-container main .projects-container div:nth-of-type(2) .project-screenshot {
+  background: #67f69a;
+}
+.total-container main .projects-container div:nth-of-type(3) .project-screenshot {
+  background: #10ae31;
+}
+.total-container main .projects-container div:nth-of-type(4) .project-screenshot {
+  background: #ba78d0;
+}
+.total-container main .projects-container div:nth-of-type(5) .project-screenshot {
+  background: #35f70b;
+}
+.total-container main .projects-container div:nth-of-type(6) .project-screenshot {
+  background: #bea982;
+}
+.total-container main .projects-container .project {
+  display: grid;
+  box-shadow: 5px 5px 12px 2px rgba(0, 0, 0, 0.56);
+}
+.total-container main .projects-container .project .project-screenshot {
+  font: 2.8rem "Playfair Display", serif;
+  text-align: center;
+  color: white;
+  padding: 80px 15px;
+}
+.total-container main .projects-container .project .project-info {
+  display: grid;
+  grid-template-columns: 6fr 1fr 1fr;
+  grid-row: 1fr 3fr;
+  gap: 20px 5px;
+  align-items: center;
+  padding: 20px 20px 60px 20px;
+}
+.total-container main .projects-container .project .project-info h3 {
+  font: 1.6rem "Playfair Display", serif;
+  padding-left: 10px;
+}
+.total-container main .projects-container .project .project-info span {
+  font: 1.1rem "Roboto", sans-serif;
+  font-weight: 500;
+  color: rgba(38, 38, 38, 0.795);
+  grid-column: 1/-1;
+  grid-row: 2;
+}
+.total-container main .projects-container .project .project-info i {
+  font-size: 1.6rem;
+  align-self: end;
+}
+.total-container main .projects-container .project .project-info svg {
+  height: 1.6rem;
+  align-self: end;
 }
 
 /*# sourceMappingURL=styles.css.map */

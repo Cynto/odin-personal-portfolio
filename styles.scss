@@ -5,11 +5,12 @@
 }
 $title-font: 'Playfair Display', serif;
 $normal-font: 'Roboto', sans-serif;
+$grey-text: rgba(38, 38, 38, 0.795);
 
 .total-container {
   min-width: 100%;
   width: 100%;
-  max-width: 100vw;
+  max-width: 1920px;
   header {
     padding: 30px;
 
@@ -17,23 +18,112 @@ $normal-font: 'Roboto', sans-serif;
 
     background: linear-gradient(
       150deg,
-      rgb(16, 147, 187) 63%,
-      white calc(63% + 1px)
+      rgb(16, 147, 187) 37%,
+      white calc(37% + 1px)
     );
     .picture-container {
       display: grid;
       align-items: end;
       min-width: 100%;
-      min-height: 470px;
+      min-height: 525px;
       background-image: url('./images/profile-small.jpg');
       background-size: cover;
       box-shadow: 5px 5px 11px 1px rgba(5, 38, 46, 0.35);
-      h1 {
+      span {
         font: 4rem $title-font;
-        padding: 10px;
+        padding: 10px 20px;
         color: white;
         text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.542);
         letter-spacing: 2px;
+      }
+    }
+    .about-me-container {
+      padding-top: 25px;
+      h1 {
+        font: 2.8rem $title-font;
+        text-align: center;
+      }
+      p {
+        font: 1.6rem $normal-font;
+        font-weight: 400;
+        color: $grey-text;
+        line-height: 35px;
+      }
+      .header-socials-container {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: center;
+        i {
+          color: black;
+          font-size: 35px;
+          padding: 0px 15px;
+        }
+      }
+    }
+  }
+  main {
+    padding-top: 100px;
+    h2 {
+      font: 2.8rem $title-font;
+      text-align: center;
+    }
+    .projects-container {
+      padding: 20px;
+      display: grid;
+      gap: 50px 30px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 420px));
+      justify-content: center;
+
+      @for $i from 1 through 6 {
+        @debug nth-of-type(#{$i});
+        div:nth-of-type(#{$i}) {
+          .project-screenshot {
+            background: rgb(random(255), random(255), random(255));
+          }
+        }
+      }
+
+      .project {
+        display: grid;
+
+        box-shadow: 5px 5px 12px 2px rgba(0, 0, 0, 0.56);
+
+        .project-screenshot {
+          font: 2.8rem $title-font;
+          text-align: center;
+          color: white;
+          padding: 80px 15px;
+        }
+        .project-info {
+          display: grid;
+          grid-template-columns: 6fr 1fr 1fr;
+          grid-row: 1fr 3fr;
+          gap: 20px 5px;
+          align-items: center;
+
+          padding: 20px 20px 60px 20px;
+
+          h3 {
+            font: 1.6rem $title-font;
+            padding-left: 10px;
+          }
+
+          span {
+            font: 1.1rem $normal-font;
+            font-weight: 500;
+            color: $grey-text;
+            grid-column: 1 / -1;
+            grid-row: 2;
+          }
+          i {
+            font-size: 1.6rem;
+            align-self: end;
+          }
+          svg {
+            height: 1.6rem;
+            align-self: end;
+          }
+        }
       }
     }
   }
