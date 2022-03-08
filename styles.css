@@ -74,45 +74,46 @@
   padding-top: 100px;
 }
 
-.total-container main h2 {
-  font: 2.8rem "Playfair Display", serif;
-  text-align: center;
-}
-
 .total-container main .projects-container {
   padding: 20px 20px 160px 20px;
   display: -ms-grid;
   display: grid;
   gap: 50px 30px;
-  -ms-grid-columns: (minmax(240px, 420px))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(240px, 420px));
+  -ms-grid-columns: (minmax(240px, 420px))[1];
+      grid-template-columns: repeat(1, minmax(240px, 420px));
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 .total-container main .projects-container div:nth-of-type(1) .project-screenshot {
-  background: #5d2d9e;
+  background: #9157ef;
 }
 
 .total-container main .projects-container div:nth-of-type(2) .project-screenshot {
-  background: #18bf65;
+  background: #babafc;
 }
 
 .total-container main .projects-container div:nth-of-type(3) .project-screenshot {
-  background: #8b8d30;
+  background: #f9ce7d;
 }
 
 .total-container main .projects-container div:nth-of-type(4) .project-screenshot {
-  background: #846fb2;
+  background: #6bb045;
 }
 
 .total-container main .projects-container div:nth-of-type(5) .project-screenshot {
-  background: #20e48f;
+  background: #9b6750;
 }
 
 .total-container main .projects-container div:nth-of-type(6) .project-screenshot {
-  background: #440c57;
+  background: #f86989;
+}
+
+.total-container main .projects-container h2 {
+  font: 2.8rem "Playfair Display", serif;
+  text-align: center;
+  grid-column: 1 / -1;
 }
 
 .total-container main .projects-container .project {
@@ -258,7 +259,7 @@
 @media (min-width: 768px) {
   .total-container header {
     padding: 150px 80px 10px;
-    background: linear-gradient(170deg, #1093bb 45%, white calc(45.3% + 1px));
+    background: linear-gradient(170deg, #1093bb 55%, white calc(55.3% + 1px));
   }
   .total-container header .about-me-container {
     background: white;
@@ -297,9 +298,13 @@
   .total-container header .about-me-container .header-socials-container {
     display: none;
   }
+  .total-container main h2 {
+    text-align: start;
+    padding-left: 20px;
+  }
   .total-container main .projects-container {
-    -ms-grid-columns: (minmax(240px, 340px))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(240px, 340px));
+    -ms-grid-columns: (minmax(240px, 340px))[2];
+        grid-template-columns: repeat(2, minmax(240px, 340px));
     gap: 40px;
     padding: 20px 10px 160px 10px;
   }
@@ -350,7 +355,10 @@
     -ms-grid-column-align: start;
         justify-self: start;
     justify-items: start;
-    width: 80%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    gap: 30px;
   }
   .total-container footer .footer-info-container .footer-socials-container i {
     font-size: 40px;
@@ -367,6 +375,73 @@
     width: 80%;
     -ms-grid-column-align: end;
         justify-self: end;
+  }
+}
+
+@media (min-width: 1260px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body .total-container {
+    min-width: auto;
+    max-width: 1920px;
+  }
+  body .total-container header {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 100px 15vw 10px;
+    background: linear-gradient(170deg, #1093bb 55%, white calc(55.3% + 1px));
+  }
+  body .total-container header .about-me-container {
+    max-width: 877.63px;
+    padding: 30px 10px 0px 10px;
+  }
+  body .total-container header .about-me-container .picture-container {
+    padding: 50px 0 0 55px;
+    margin: -50px 20px -20px -55px;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    min-height: 460px;
+    background-image: url("./images/profile-large.jpg");
+  }
+  body .total-container header .about-me-container .picture-container span {
+    position: unset;
+    padding-left: 0;
+  }
+  body .total-container header .about-me-container h1 {
+    padding-top: 0px;
+  }
+  body .total-container header .about-me-container p {
+    padding: 0;
+    padding-top: 20px;
+  }
+  body .total-container main .projects-container {
+    -ms-grid-columns: (minmax(240px, 480px))[3];
+        grid-template-columns: repeat(3, minmax(240px, 480px));
+    gap: 40px;
+    padding: 20px 10px 160px 0;
+  }
+  body .total-container main .projects-container h2 {
+    text-align: start;
+    padding-left: 0;
+  }
+  body .total-container footer .footer-info-container .footer-socials-container {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    gap: 30px;
+  }
+  body .total-container footer img {
+    height: 430px;
+    width: auto;
   }
 }
 /*# sourceMappingURL=styles.css.map */

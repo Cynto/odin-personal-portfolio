@@ -9,6 +9,7 @@ $grey-text: rgba(38, 38, 38, 0.795);
 $blue-background: rgb(16, 147, 187);
 
 $breakpoint-tablet: 768px;
+$breakpoint-desktop: 1260px;
 
 .total-container {
   min-width: 100%;
@@ -66,15 +67,12 @@ $breakpoint-tablet: 768px;
   }
   main {
     padding-top: 100px;
-    h2 {
-      font: 2.8rem $title-font;
-      text-align: center;
-    }
+
     .projects-container {
       padding: 20px 20px 160px 20px;
       display: grid;
       gap: 50px 30px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 420px));
+      grid-template-columns: repeat(1, minmax(240px, 420px));
       justify-content: center;
 
       @for $i from 1 through 6 {
@@ -84,6 +82,11 @@ $breakpoint-tablet: 768px;
             background: rgb(random(255), random(255), random(255));
           }
         }
+      }
+      h2 {
+        font: 2.8rem $title-font;
+        text-align: center;
+        grid-column: 1 / -1;
       }
 
       .project {
@@ -210,8 +213,8 @@ $breakpoint-tablet: 768px;
       padding: 150px 80px 10px;
       background: linear-gradient(
         170deg,
-        $blue-background 45%,
-        white calc(45.3% + 1px)
+        $blue-background 55%,
+        white calc(55.3% + 1px)
       );
 
       .about-me-container {
@@ -252,8 +255,12 @@ $breakpoint-tablet: 768px;
       }
     }
     main {
+      h2 {
+        text-align: start;
+        padding-left: 20px;
+      }
       .projects-container {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 340px));
+        grid-template-columns: repeat(2, minmax(240px, 340px));
         gap: 40px;
         padding: 20px 10px 160px 10px;
       }
@@ -294,7 +301,8 @@ $breakpoint-tablet: 768px;
         .footer-socials-container {
           justify-self: start;
           justify-items: start;
-          width: 80%;
+          width: fit-content;
+          gap: 30px;
           i {
             font-size: 40px;
             &:nth-child(1) {
@@ -310,6 +318,72 @@ $breakpoint-tablet: 768px;
         min-height: 300px;
         width: 80%;
         justify-self: end;
+      }
+    }
+  }
+}
+@media (min-width: $breakpoint-desktop) {
+  body {
+    display: grid;
+    justify-content: center;
+    .total-container {
+      min-width: auto;
+      max-width: 1920px;
+      header {
+        display: grid;
+        justify-content: center;
+        padding: 100px 15vw 10px;
+        background: linear-gradient(
+          170deg,
+          $blue-background 55%,
+          white calc(55.3% + 1px)
+        );
+        .about-me-container {
+          max-width: 877.63px;
+          padding: 30px 10px 0px 10px;
+          .picture-container {
+            padding: 50px 0 0 55px;
+            margin: -50px 20px -20px -55px;
+            min-width: fit-content;
+            min-height: 460px;
+            background-image: url('./images/profile-large.jpg');
+            span {
+              position: unset;
+              padding-left: 0;
+            }
+          }
+          h1 {
+            padding-top: 0px;
+          }
+          p {
+            padding: 0;
+            padding-top: 20px;
+          }
+        }
+      }
+      main {
+        .projects-container {
+          grid-template-columns: repeat(3, minmax(240px, 480px));
+          gap: 40px;
+          padding: 20px 10px 160px 0;
+
+          h2 {
+            text-align: start;
+            padding-left: 0;
+          }
+        }
+      }
+      footer {
+        .footer-info-container {
+          .footer-socials-container {
+            width: fit-content;
+            gap: 30px;
+          }
+        }
+        img {
+          height: 430px;
+          width: auto;
+        }
       }
     }
   }
